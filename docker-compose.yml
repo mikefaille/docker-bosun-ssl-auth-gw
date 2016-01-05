@@ -1,5 +1,5 @@
 tsdb:
-  image: bosun-fullstack
+  image: mikefaille/bosun-fullstack
   hostname: tsdb
 ambassador:
   build: .
