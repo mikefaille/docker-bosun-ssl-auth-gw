@@ -1,0 +1,11 @@
+tsdb:
+  image: bosun-fullstack
+  hostname: tsdb
+ambassador:
+  build: .
+  # command: python manage.py runserver 0.0.0.0:8000
+  ports:
+    - "42422:42422"
+  links:
+    - tsdb
+  hostname: ambassador

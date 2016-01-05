@@ -17,9 +17,12 @@ IMPORTANT:
 
 EOF
 
+(echo "upstream tsdb { server $TSDB_PORT_4242_TCP_ADDR:$TSDB_PORT_4242_TCP_PORT; }" && cat /etc/nginx/external/proxy.conf) > proxy.conf.new
+mv proxy.conf.new /etc/nginx/external/proxy.conf
+
 if [ -z ${DH_SIZE+x} ]
 then
-  >&2 echo ">> no \$DH_SIZE specified using default" 
+  >&2 echo ">> no \$DH_SIZE specified using default"
   DH_SIZE="2048"
 fi
 
